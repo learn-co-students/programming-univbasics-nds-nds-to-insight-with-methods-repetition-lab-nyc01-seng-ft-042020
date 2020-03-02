@@ -26,6 +26,7 @@ end
 
 def list_of_directors(source)
   # Write this implementation
+  stooges = ["Larry", "Curly", "Moe", "Iggy"]
 end
 
 def total_gross(source)
@@ -38,6 +39,15 @@ def total_gross(source)
   # Visit each key (i.e. director name), look up the value in the hash
   # returned by directors_totals, and add it to a running total. When done,
   # return the total
+  
+  row_index = 0
+
+while row_index < source.size do 
+  total = 0
+  grosses = directors_totals(source).values
+  total = grosses.inject(0) {|sum, i|  sum + i }
+  
+  row_index +=1
 end
-
-
+total
+end
